@@ -47,7 +47,8 @@ RUN mkdir -p /opt/mendix/buildpack /opt/mendix/build &&\
 COPY scripts/compilation scripts/git /opt/mendix/buildpack/
 
 # Copy project model/sources
-COPY $BUILD_PATH /opt/mendix/build
+#COPY $BUILD_PATH /opt/mendix/build
+COPY /var/lib/jenkins/workspace/Infozech-mendix  /var/lib/jenkins/workspace/Infozech-mendix
 
 # Install the buildpack Python dependencies
 RUN chmod +rx /opt/mendix/buildpack/bin/bootstrap-python && /opt/mendix/buildpack/bin/bootstrap-python /opt/mendix/buildpack /tmp/buildcache
